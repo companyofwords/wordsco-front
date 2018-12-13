@@ -10,6 +10,7 @@ import ProjectCard from '../components/ProjectCard';
 import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
 import { hidden } from '../styles/utils';
 import { colors } from '../../tailwind';
+import Form from "../components/ContactForm";
 import triangle from '../images/triangle.svg';
 import avatar from '../images/neil-profile.png';
 import '../styles/global';
@@ -161,6 +162,15 @@ const Index = () => (
             We are <br /> Wordsco.
           </BigTitle>
           <Subtitle>We're believers in a better web, which puts your message at the centre.</Subtitle>
+
+          <Subtitle>
+It’s 
+</Subtitle><BigTitle> 
+Time to move on from ordinary Wordpress.
+</BigTitle>
+          <Subtitle>
+Time to take your message to the next level.
+</Subtitle>
         </Hero>
       </Content>
       <DividerMiddle
@@ -169,7 +179,86 @@ const Index = () => (
         offset={1.1}
         factor={2}
       />
-      <Content speed={0.4} offset={1.2} factor={2}>
+      <Content speed={0.4} offset={1.2}>
+        <Hero>
+          <BigTitle>
+          It might be just a few seconds slow to load or
+          </BigTitle>
+          <Subtitle>But that is the difference between from the non-starters and those that scale.</Subtitle>
+
+          <Subtitle>
+          From the small ok to the possibilities
+</Subtitle><BigTitle> 
+Beyond the problems, bugs, 
+</BigTitle>
+          <Subtitle>
+          To the next generation of CMS
+</Subtitle>
+<BigTitle>
+Lightning fast progressive web applications. 
+          </BigTitle>
+          <Subtitle>To be content rich.</Subtitle>
+
+          <Subtitle>
+          SEO-rich
+</Subtitle><BigTitle> 
+To make your product findable, searchable, sharable 
+</BigTitle>
+          <Subtitle>
+          Ready for video and audio
+</Subtitle>
+ 
+
+Fully functional 
+Useful
+
+Technology working for you
+
+Tailored to your service 
+
+Tailored for your client
+
+Friendly for clients or contributors 
+
+Maintainable and evolving to your needs…
+
+We’re all about the content
+
+Content-rich sites
+
+Full of words…
+
+We’re here to offer
+
+Developers for hire around Manchester, England
+
+…..Industrial Revolution
+
+And we’re here to make the new web
+
+We’re responsive –
+
+We’re pragmatic – 
+
+ 
+
+
+
+
+
+Alternatives… (rather than menu)
+
+-NodeJS Stack
+
+-Firebase - SAAS
+
+-Static Progressive Web Applications in Gatsby.JS
+
+-Custom WordPress Themes & Custom plugins
+JAM Stack
+        </Hero>
+      </Content>
+      <Content speed={0.4} offset={2.6} factor={2}>
         <Inner>
           <Title>On the Menu</Title>
           <ProjectsWrapper>
@@ -285,7 +374,8 @@ const Index = () => (
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
-            Insert Netlify Form here.
+            
+            <Form />
             Visit
             <a href="https://neil-puttick-cv.netlify.com">neil-puttick-cv.netlify.com</a>
             or email me at

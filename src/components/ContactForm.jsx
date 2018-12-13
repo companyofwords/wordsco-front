@@ -21,11 +21,11 @@ const ContactForm = () => (
 <div class="md:flex md:items-center mb-6">
       <div class="md:w-1/3">
         <label class="block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
-          Full Name:
+          Your Name:
         </label>
       </div>
       <div class="md:w-2/3">
-        <input class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" type="text" value="frontform" name="name" placeholder="******************"/>
+        <input class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" type="text" name="name" placeholder="******************"/>
       </div>
     </div>
     <div class="md:flex md:items-center mb-6">
@@ -35,7 +35,7 @@ const ContactForm = () => (
         </label>
       </div>
       <div class="md:w-2/3">
-        <input class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" type="email" name="email" value="frontform" placeholder="******************"/>
+        <input class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" type="email" name="email" placeholder="******************"/>
       </div>
     </div>
     <div class="md:flex md:items-center mb-6">
@@ -45,7 +45,7 @@ const ContactForm = () => (
         </label>
       </div>
       <div class="md:w-2/3">
-        <textarea class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" name="message" value="frontform" placeholder="******************"/>
+        <textarea class="bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" id="inline-full-name" name="message" placeholder="******************"/>
       </div>
     </div>
     <button type="submit">Send</button>

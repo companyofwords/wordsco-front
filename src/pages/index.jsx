@@ -377,7 +377,7 @@ JAM Stack
           <Title>Get in touch</Title>
           <ContactText>
             
-            <Form />
+            <Form netlify/>
             Visit
             <a href="https://neil-puttick-cv.netlify.com">neil-puttick-cv.netlify.com</a>
             or email me at

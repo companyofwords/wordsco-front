@@ -57,8 +57,9 @@ const icons = {
   },
   lettert: {
     shape: (
-    <path d="M150, 0, L75, 200, L225, 200, Z" />),
-    viewBox: '0 0 30 30',
+      <text x="0" y="80" fill="red">Lorem Ipsum All the other Companies offering Wordpress for SMEs</text>
+    ),
+    viewBox: '0 0 30 180',
   },
   hexa: {
     shape: (
@@ -92,7 +93,7 @@ SVG.propTypes = {
   stroke: PropTypes.string,
   fill: PropTypes.string,
   width: PropTypes.number,
-  icon: PropTypes.oneOf(['triangle', 'circle', 'arrowUp', 'upDown', 'box', 'hexa']).isRequired,
+  icon: PropTypes.oneOf(['triangle', 'circle', 'arrowUp', 'upDown', 'box', 'hexa', 'lettert']).isRequired,
   left: PropTypes.string,
   top: PropTypes.string,
   className: PropTypes.string,

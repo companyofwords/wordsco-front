@@ -132,7 +132,7 @@ const Index = () => (
         <UpDown>
           <SVG icon="triangle" className={hidden} width={48} stroke={colors.orange} left="10%" top="20%" />
           <SVG icon="hexa" width={48} stroke={colors.red} left="60%" top="70%" />
-          <SVG icon="lettert" width={6} stroke={colors.orange} left="60%" top="15%" />
+          <SVG icon="lettert" width={50} stroke={colors.orange} left="60%" top="15%" />
         </UpDown>
         <UpDownWide>
           <SVG icon="arrowUp" className={hidden} width={16} fill={colors['blue-dark']} left="80%" top="10%" />

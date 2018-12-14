@@ -40,6 +40,21 @@ const upDownWideAnimation = keyframes`
   }
 `;
 
+const flashingsign = keyframes`
+  0% {
+    border: solid #000 3px;
+    border-radius: 3px;
+  }
+  50% {
+    border: solid rgb(155, 255, 8) 3px;
+    border-radius: 3px;
+  }
+  100% {
+    border: solid #000 3px;
+    border-radius: 3px;
+  }
+`;
+
 export const UpDown = styled.div`
   animation: ${upDownAnimation} 4s ease-in-out infinite alternate;
   ${tw('pin absolute')};
@@ -52,4 +67,8 @@ export const UpDownWide = styled.div`
 
 export const waveAnimation = css`
   animation: ${wave} 20s linear infinite alternate;
+`;
+
+export const signAnimation = css`
+  animation: ${flashingsign} 2s linear infinite alternate;
 `;

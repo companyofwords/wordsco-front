@@ -1,17 +1,18 @@
 /* global tw */
 import React from 'react';
 import styled from 'react-emotion';
-import 'typeface-cantata-one';
-import 'typeface-open-sans';
+import 'typeface-cooper-hewitt';
+import 'typeface-aleo';
 import { Parallax, ParallaxLayer } from 'react-spring/dist/addons';
 import SEO from '../components/SEO';
 import SVG from '../components/SVG';
 import ProjectCard from '../components/ProjectCard';
-import { rotate, UpDown, UpDownWide, waveAnimation } from '../styles/animations';
+import { rotate, UpDown, UpDownWide, waveAnimation, signAnimation } from '../styles/animations';
 import { hidden } from '../styles/utils';
 import { colors } from '../../tailwind';
 import Form from "../components/ContactForm";
 import triangle from '../images/triangle.svg';
+import forhire from '../images/for-hire-text-black.svg';
 import avatar from '../images/neil-profile.png';
 import '../styles/global';
 
@@ -43,7 +44,7 @@ const Inner = styled.div`
 const BigTitle = styled.h1`
   ${tw('text-5xl lg:text-6xl font-serif text-white mb-6 tracking-wide')};
   text-shadow: 0 5px 35px rgba(255, 255, 255, 0.15);
-  font-family: Open Sans;
+  font-family: Cooper Hewitt;
 `;
 
 const Title = styled.h1`
@@ -59,13 +60,14 @@ const Title = styled.h1`
     animation: ${rotate} 4s linear infinite;
     left: -60px;
     top: 5px;
+    font-family: Cooper Hewitt;
   }
 `;
 
 const Subtitle = styled.p`
   ${tw('text-2xl lg:text-4xl font-sans text-white mt-8 xxl:w-3/4')};
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-  font-family: Cantata One;
+  font-family: Aleo;
 `;
 
 const ProjectsWrapper = styled.div`
@@ -99,6 +101,18 @@ const AboutHero = styled.div`
   ${tw('flex flex-col lg:flex-row items-center mt-8')};
 `;
 
+const ForHire = styled.div`
+width: 32px;
+height: 233px;
+position: absolute;
+margin: 4px;
+right: 0px;
+top: 20px;
+z-index: 99;
+background: url(${forhire}) no-repeat;
+background-color: rgb(30, 30, 30);
+`;
+
 const Avatar = styled.img`
   ${tw('rounded-full w-32 xl:w-48 shadow-lg h-auto')};
 `;
@@ -116,6 +130,7 @@ const ContactText = styled.p`
   a {
     color: #e07628;
     text-decoration: none;
+    font-family: Aleo;
   }
 `;
 
@@ -124,11 +139,13 @@ const Footer = styled.footer`
   a {
     color: #e07628;
     text-decoration: none;
+    font-family: Aleo;
   }
 `;
 
 const Index = () => (
   <React.Fragment>
+    <ForHire className={signAnimation}/>
     <SEO />
     <Parallax pages={5}>
       <Divider speed={0.2} offset={0}>
@@ -181,7 +198,7 @@ Time to take your message to the next level.
         offset={1.1}
         factor={2}
       />
-      <Content speed={0.4} offset={1.2}>
+      <Content speed={0.4} offset={1.4}>
         <Hero>
           <BigTitle>
           It might be just a few seconds slow to load or
@@ -209,55 +226,45 @@ To make your product findable, searchable, sharable
           <Subtitle>
           Ready for video and audio
 </Subtitle>
- 
-
+<BigTitle>
 Fully functional 
-Useful
+          </BigTitle>
+          <Subtitle>Useful</Subtitle>
 
-Technology working for you
-
-Tailored to your service 
-
+          <Subtitle>
+          Tailored to your service
+</Subtitle><BigTitle> 
 Tailored for your client
-
-Friendly for clients or contributors 
-
+</BigTitle>
+          <Subtitle>
+          Friendly for clients or contributors 
+</Subtitle>
+<BigTitle>
 Maintainable and evolving to your needs…
+          </BigTitle>
+          <Subtitle>We’re all about the content</Subtitle>
 
-We’re all about the content
-
-Content-rich sites
-
+          <Subtitle>
+          Content-rich sites
+</Subtitle><BigTitle> 
 Full of words…
+</BigTitle>
+          <Subtitle>
+          We’re responsive
+</Subtitle>
+<BigTitle> 
+Full of words…
+</BigTitle>
+          <Subtitle>
+          We’re responsive
+</Subtitle>
+<BigTitle> 
+We’re pragmatic
+</BigTitle>
+          <Subtitle>
+          And we’re here to make the new web
+</Subtitle>
 
-We’re here to offer
-
-Developers for hire around Manchester, England
-
-…..Industrial Revolution
-
-And we’re here to make the new web
-
-We’re responsive –
-
-We’re pragmatic – 
-
- 
-
-
-
-
-
-Alternatives… (rather than menu)
-
--NodeJS Stack
-
--Firebase - SAAS
-
--Static Progressive Web Applications in Gatsby.JS
-
--Custom WordPress Themes & Custom plugins
-JAM Stack
         </Hero>
       </Content>
       <Content speed={0.4} offset={2.6} factor={2}>
@@ -337,26 +344,22 @@ JAM Stack
         <SVG icon="box" width={12} fill={colors['grey-darkest']} left="20%" top="30%" />
         <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" />
       </Divider>
-      <Content speed={0.4} offset={3}>
+      <Content speed={0.4} offset={4}>
         <Inner>
           <Title>We are ideas people above all else...</Title>
           <AboutHero>
-            <Avatar src={avatar} alt="John Doe" />
+            <Avatar src={avatar} alt="Neil Puttick - Wordsco" />
             <AboutSub>
-              The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-              Emoji into my speech to better express myself. Winky face.
+              Developers for hire around Manchester, England...here to start the new Industrial Revolution.
+
             </AboutSub>
           </AboutHero>
           <AboutDesc>
-            You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
-            every day. My mother cried the day I was born because she knew she’d never be prettier than me. You should
-            make me your campaign manager. I was born for politics. I have great hair and I love lying. Captain? The
-            kids want to know where Paulie the Pigeon is. I told them he got sucked up into an airplane engine, is that
-            all right?
+          We’re here to offer a better service for business.
           </AboutDesc>
         </Inner>
       </Content>
-      <Divider fill="#23262b" speed={0.2} offset={4}>
+      <Divider fill="#23262b" speed={0.2} offset={5}>
         <WaveWrapper>
           <InnerWave>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 338.05" preserveAspectRatio="none">
@@ -372,7 +375,7 @@ JAM Stack
           </InnerWave>
         </WaveWrapper>
       </Divider>
-      <Content speed={0.4} offset={4}>
+      <Content speed={0.4} offset={6}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
@@ -389,7 +392,7 @@ JAM Stack
           <a href="https://github.com/companyofwords"> Github Repository</a>.
         </Footer>
       </Content>
-      <Divider speed={0.1} offset={4}>
+      <Divider speed={0.1} offset={8}>
         <UpDown>
           <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
           <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />

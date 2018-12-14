@@ -12221,10 +12221,20 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
+typeface-aleo@^0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/typeface-aleo/-/typeface-aleo-0.0.44.tgz#d89cc1bd48773b857d107db0b638db08ccfdafd8"
+  integrity sha512-wODRtI7WCsM4g/4lDKfg9bKJwIrXiF95atH+ft1g6XzkcHvyik2ELbNHfst4oDyQoHhnp2D0nrkPdSGR/Tc+zA==
+
 typeface-cantata-one@^0.0.54:
   version "0.0.54"
   resolved "https://registry.yarnpkg.com/typeface-cantata-one/-/typeface-cantata-one-0.0.54.tgz#5442843224cca606a76d0fdc97a6dffb13c11a70"
   integrity sha512-ut76khrgeCWiHHIedKrpWYmU0N1D31jcDbw50CfqZQ7W01KuLivBOe3I2C2+XmJLhDCVHQBa9q9KIBpasBAnKw==
+
+typeface-cooper-hewitt@^0.0.44:
+  version "0.0.44"
+  resolved "https://registry.yarnpkg.com/typeface-cooper-hewitt/-/typeface-cooper-hewitt-0.0.44.tgz#def4915d143bebb8a9a1ca4ea6b81946271a2a57"
+  integrity sha512-5TEnSbhWCnCQ25dGaFrSqCphJQoAaVeCuqmMMAXLK7uOiOn3YrMBdpq2nh4R6SEM+Z7FGYXZY7/Vdz/cDl06Ww==
 
 typeface-open-sans@^0.0.54:
   version "0.0.54"

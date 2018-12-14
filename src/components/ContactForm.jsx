@@ -51,7 +51,12 @@ const Twothirdcolumn = styled.div`
 const ContactForm = () => (
     <React.Fragment>
 
-<NetlifyForm name='Form With Invisible Recaptcha'>
+ <NetlifyForm
+    name="contact-form"
+    method="post"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+  >
   {({ loading, error, success }) => (
     <div>
       {loading &&
@@ -64,7 +69,8 @@ const ContactForm = () => (
         <div>Thank you for contacting us!</div>
       }
       {!loading && !success &&
-        <div>       
+        <div>
+             
           <FormBlock>
       <Onethirdcolumn>
         <Label>
@@ -105,9 +111,9 @@ const ContactForm = () => (
       </FormBlock>
         </div>
       }
-    </div>
+      </div>
   )}
-</NetlifyForm>
+  </NetlifyForm>
   </React.Fragment>
   
 );

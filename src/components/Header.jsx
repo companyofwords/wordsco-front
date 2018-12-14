@@ -1,17 +1,17 @@
 import React, { Fragment } from 'react';
 import Headroom from 'react-headroom';
-import { Flex, Image } from 'rebass';
-import styled from 'styled-components';
-import { SectionLinks } from 'react-scroll-section';
+//import { Flex, Image } from 'rebass';
+import { colors } from '../../tailwind';
+import styled from 'react-emotion';
 import Fade from 'react-reveal/Fade';
 import RouteLink from './RouteLink';
-import Logo from './Logo/Portfolio.svg';
+//import Logo from './Logo/Portfolio.svg';
 
 const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
 const HeaderContainer = styled(Headroom)`
   .headroom--pinned {
-    background: ${props => props.theme.colors.primaryDark};
+    background: ${props => colors.orange};
   }
 
   position: absolute;
@@ -38,19 +38,14 @@ const formatLinks = allLinks =>
 const Header = () => (
   <HeaderContainer>
     <Fade top>
-      <Flex
-        flexWrap="wrap"
-        justifyContent="space-between"
-        alignItems="center"
-        p={3}
-      >
-        <SectionLinks>
+
+        <div>
           {({ allLinks }) => {
             const { home, links } = formatLinks(allLinks);
 
             const homeLink = home && (
               <Image
-                src={Logo}
+                //src={Logo}
                 width="50px"
                 alt="Portfolio Logo"
                 onClick={home.onClick}
@@ -69,12 +64,12 @@ const Header = () => (
             return (
               <Fragment>
                 {homeLink}
-                <Flex mr={[0, 3, 5]}>{navLinks}</Flex>
+                <div mr={[0, 3, 5]}>{navLinks}</div>
               </Fragment>
             );
           }}
-        </SectionLinks>
-      </Flex>
+        </div>
+      
     </Fade>
   </HeaderContainer>
 );

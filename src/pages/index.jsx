@@ -11,6 +11,7 @@ import { rotate, UpDown, UpDownWide, waveAnimation, signAnimation } from '../sty
 import { hidden } from '../styles/utils';
 import { colors } from '../../tailwind';
 import Form from "../components/ContactForm";
+import Header from "../components/Header";
 import triangle from '../images/triangle.svg';
 import forhire from '../images/for-hire-text-black.svg';
 import avatar from '../images/neil-profile.png';
@@ -145,9 +146,10 @@ const Footer = styled.footer`
 
 const Index = () => (
   <React.Fragment>
+    <Header />
     <ForHire className={signAnimation}/>
     <SEO />
-    <Parallax pages={7}>
+    <Parallax pages={6}>
       <Divider speed={0.2} offset={0}>
         <UpDown>
           <SVG icon="triangle" className={hidden} width={48} stroke={colors.orange} left="10%" top="20%" />
@@ -359,7 +361,7 @@ We’re pragmatic
           </AboutDesc>
         </Inner>
       </Content>
-      <Divider fill="#23262b" speed={0.2} offset={4}>
+      <Divider fill="#23262b" speed={0.2} offset={4.8}>
         <WaveWrapper>
           <InnerWave>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 338.05" preserveAspectRatio="none">
@@ -375,12 +377,12 @@ We’re pragmatic
           </InnerWave>
         </WaveWrapper>
       </Divider>
-      <Content speed={0.4} offset={5.5}>
+      <Content speed={0.4} offset={5}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
             
-            <Form netlify/>
+            <Form netlify="true"/>
             Visit
             <a href="https://neil-puttick-cv.netlify.com">neil-puttick-cv.netlify.com</a>
             or email me at
@@ -392,7 +394,7 @@ We’re pragmatic
           <a href="https://github.com/companyofwords"> Github Repository</a>.
         </Footer>
       </Content>
-      <Divider speed={0.1} offset={6}>
+      <Divider speed={0.1} offset={5.5}>
         <UpDown>
           <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
           <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />

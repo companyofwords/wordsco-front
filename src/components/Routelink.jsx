@@ -1,7 +1,8 @@
 import React from 'react';
-import { Label } from 'rebass';
-import styled from 'styled-components';
+//import { Label } from 'rebass';
+import styled from 'react-emotion';
 import PropTypes from 'prop-types';
+import { colors } from '../../tailwind';
 
 const LinkAnimated = styled.span`
   text-decoration: none;
@@ -11,7 +12,7 @@ const LinkAnimated = styled.span`
   color: inherit;
   border-bottom: ${props => `${props.borderWidth} solid transparent`};
   border-bottom-color: ${props =>
-    props.selected && props.theme.colors.primaryLight};
+    props.selected && colors.orange};
   transition: 0.4s;
   scroll-behavior: smooth;
 
@@ -21,7 +22,7 @@ const LinkAnimated = styled.span`
     right: 0;
     width: 0;
     bottom: -${props => props.borderWidth};
-    background: ${props => props.theme.colors.secondary};
+    background: ${props => props.theme.colors.orange};
     height: ${props => props.borderWidth};
     transition-property: width;
     transition-duration: 0.3s;

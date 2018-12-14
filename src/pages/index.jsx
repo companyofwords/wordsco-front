@@ -147,7 +147,7 @@ const Index = () => (
   <React.Fragment>
     <ForHire className={signAnimation}/>
     <SEO />
-    <Parallax pages={5}>
+    <Parallax pages={7}>
       <Divider speed={0.2} offset={0}>
         <UpDown>
           <SVG icon="triangle" className={hidden} width={48} stroke={colors.orange} left="10%" top="20%" />
@@ -302,7 +302,7 @@ We’re pragmatic
           </ProjectsWrapper>
         </Inner>
       </Content>
-      <Divider speed={0.1} offset={1} factor={2}>
+      <Divider speed={0.1} offset={2.8} factor={2}>
         <UpDown>
           <SVG icon="box" width={6} fill={colors.white} left="85%" top="75%" />
           <SVG icon="upDown" width={8} fill={colors.teal} left="70%" top="20%" />
@@ -325,7 +325,7 @@ We’re pragmatic
         <SVG icon="hexa" width={8} stroke={colors.yellow} left="80%" top="70%" />
       </Divider>
       <Divider bg="#23262b" clipPath="polygon(0 16%, 100% 4%, 100% 82%, 0 94%)" speed={0.2} offset={3} />
-      <Divider speed={0.1} offset={3}>
+      <Divider speed={0.1} offset={3.4}>
         <UpDown>
           <SVG icon="box" className={hidden} width={6} fill={colors.blue} left="50%" top="75%" />
           <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
@@ -344,7 +344,7 @@ We’re pragmatic
         <SVG icon="box" width={12} fill={colors['grey-darkest']} left="20%" top="30%" />
         <SVG icon="hexa" width={8} stroke={colors['grey-darkest']} left="80%" top="70%" />
       </Divider>
-      <Content speed={0.4} offset={4}>
+      <Content speed={0.4} offset={4.2}>
         <Inner>
           <Title>We are ideas people above all else...</Title>
           <AboutHero>
@@ -359,7 +359,7 @@ We’re pragmatic
           </AboutDesc>
         </Inner>
       </Content>
-      <Divider fill="#23262b" speed={0.2} offset={5}>
+      <Divider fill="#23262b" speed={0.2} offset={4}>
         <WaveWrapper>
           <InnerWave>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 338.05" preserveAspectRatio="none">
@@ -375,7 +375,7 @@ We’re pragmatic
           </InnerWave>
         </WaveWrapper>
       </Divider>
-      <Content speed={0.4} offset={6}>
+      <Content speed={0.4} offset={5.5}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
@@ -392,7 +392,7 @@ We’re pragmatic
           <a href="https://github.com/companyofwords"> Github Repository</a>.
         </Footer>
       </Content>
-      <Divider speed={0.1} offset={8}>
+      <Divider speed={0.1} offset={6}>
         <UpDown>
           <SVG icon="upDown" className={hidden} width={8} fill={colors['grey-darkest']} left="70%" top="20%" />
           <SVG icon="triangle" width={8} stroke={colors['grey-darkest']} left="25%" top="5%" />

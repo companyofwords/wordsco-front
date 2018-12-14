@@ -72,6 +72,7 @@ const ContactForm = () => (
         <div>
              
           <FormBlock>
+          <Input type="hidden" name="contact-form" value="contact" />
       <Onethirdcolumn>
         <Label>
           Name:

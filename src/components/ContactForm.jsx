@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 //import { div   } from '../../tailwind';
 import '../../tailwind.css';
+import NetlifyForm from 'react-netlify-form'
 
 const Wrapper = styled.a`
   width: 100%;
@@ -50,16 +51,31 @@ const Twothirdcolumn = styled.div`
 const ContactForm = () => (
     <React.Fragment>
 
-<Form name="frontform" netlify="true">
-<FormBlock>
+<NetlifyForm
+  name='Form With Invisible Recaptcha'
+>
+  {({ loading, error, success }) => (
+    <div>
+      {loading &&
+        <div>Loading...</div>
+      }
+      {error &&
+        <div>Your information was not sent. Please try again later.</div>
+      }
+      {success &&
+        <div>Thank you for contacting us!</div>
+      }
+      {!loading && !success &&
+        <div>       
+          <FormBlock>
       <Onethirdcolumn>
         <Label>
-          Your Name:
+          Name:
         </Label>
       </Onethirdcolumn>
       <Twothirdcolumn>
-        <Input id="inline-full-name" type="text" name="name" placeholder="******************"/>
-      </Twothirdcolumn>
+          <Input type='text' name='Name' required />
+          </Twothirdcolumn>
     </FormBlock>
     <FormBlock>
       <Onethirdcolumn>
@@ -68,8 +84,8 @@ const ContactForm = () => (
         </Label>
       </Onethirdcolumn>
       <Twothirdcolumn>
-        <Input id="inline-full-name" type="email" name="email" placeholder="******************"/>
-      </Twothirdcolumn>
+          <Input type='text' name='Email' required />
+          </Twothirdcolumn>
     </FormBlock>
     <FormBlock>
       <Onethirdcolumn>
@@ -78,21 +94,23 @@ const ContactForm = () => (
         </Label>
       </Onethirdcolumn>
       <Twothirdcolumn>
-        <Textarea id="inline-full-name" name="message" placeholder="******************"/>
-      </Twothirdcolumn>
+          <Textarea name='Message' required />
+          </Twothirdcolumn>
       
-    </FormBlock>
-    <FormBlock>
-      <Onethirdcolumn>
-      </Onethirdcolumn>
-      <Twothirdcolumn>
-      <Button type="submit">Send</Button>
-      </Twothirdcolumn>
-      
-    </FormBlock>
-    
-</Form>
-
+      </FormBlock>
+      <FormBlock>
+        <Onethirdcolumn>
+        </Onethirdcolumn>
+        <Twothirdcolumn>
+          <Button type="submit">Submit</Button>
+          </Twothirdcolumn> 
+      </FormBlock>
+        </div>
+      }
+      {/* Invisible reCAPTCHA must be kept outside of conditionals */}
+    </div>
+  )}
+</NetlifyForm>
   </React.Fragment>
   
 );

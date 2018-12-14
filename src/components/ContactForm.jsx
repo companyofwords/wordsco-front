@@ -1,9 +1,9 @@
 /* global tw */
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'react-emotion';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'react-emotion'
 //import { div   } from '../../tailwind';
-import '../../tailwind.css';
+import '../../tailwind.css'
 import NetlifyForm from 'react-netlify-form'
 
 const Wrapper = styled.a`

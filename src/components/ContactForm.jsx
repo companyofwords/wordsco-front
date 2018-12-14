@@ -51,9 +51,7 @@ const Twothirdcolumn = styled.div`
 const ContactForm = () => (
     <React.Fragment>
 
-<NetlifyForm
-  name='Form With Invisible Recaptcha'
->
+<NetlifyForm name='Form With Invisible Recaptcha'>
   {({ loading, error, success }) => (
     <div>
       {loading &&
@@ -107,7 +105,6 @@ const ContactForm = () => (
       </FormBlock>
         </div>
       }
-      {/* Invisible reCAPTCHA must be kept outside of conditionals */}
     </div>
   )}
 </NetlifyForm>

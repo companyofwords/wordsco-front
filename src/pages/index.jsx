@@ -380,7 +380,7 @@ We’re pragmatic
           <Title>Get in touch</Title>
           <ContactText>
             
-            <Form netlify="true"/>
+            <Form/>
             Visit
             <a href="https://neil-puttick-cv.netlify.com">neil-puttick-cv.netlify.com</a>
             or email me at

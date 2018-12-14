@@ -11,7 +11,6 @@ import { rotate, UpDown, UpDownWide, waveAnimation, signAnimation } from '../sty
 import { hidden } from '../styles/utils';
 import { colors } from '../../tailwind';
 import Form from "../components/ContactForm";
-import Header from "../components/Header";
 import triangle from '../images/triangle.svg';
 import forhire from '../images/for-hire-text-black.svg';
 import avatar from '../images/neil-profile.png';
@@ -146,7 +145,6 @@ const Footer = styled.footer`
 
 const Index = () => (
   <React.Fragment>
-    <Header />
     <ForHire className={signAnimation}/>
     <SEO />
     <Parallax pages={6}>

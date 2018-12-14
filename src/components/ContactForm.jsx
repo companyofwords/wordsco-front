@@ -1,125 +1,80 @@
-/* global tw */
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'react-emotion'
-//import { div   } from '../../tailwind';
-import '../../tailwind.css'
-import NetlifyForm from 'react-netlify-form'
+import React from "react";
+import { navigateTo } from "gatsby-link";
 
-const Wrapper = styled.a`
-  width: 100%;
-  ${tw('shadow-lg relative no-underline rounded-lg px-8 py-8 md:py-24 text-white')};
-  background: ${props => props.bg};
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  &:hover {
-    transform: translateY(-5px);
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
+export default class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
   }
-`;
 
-const FormBlock = styled.div`
-  ${tw('md:flex md:items-center mb-12')};
-`;
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-const Form = styled.form`
-  ${tw('w-full max-w-lg')};
-`;
+  handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...this.state
+      })
+    })
+      .then(() => navigateTo(form.getAttribute("action")))
+      .catch(error => alert(error));
+  };
 
-const Label = styled.label`
-  ${tw('block text-grey font-bold md:text-right mb-1 md:mb-0 pr-4')};
-`;
-
-const Button = styled.button`
-  ${tw('flex-no-shrink bg-teal hover:bg-teal-dark border-teal hover:border-teal-dark text-sm border-4 text-white py-1 px-2 rounded')};
-`;
-
-const Textarea = styled.textarea`
-  ${tw('bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple')};
-`;
-
-const Input = styled.input`
-  ${tw('bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple')};
-`;
-
-const Onethirdcolumn = styled.div`
-  ${tw('md:w-1/3')};
-`;
-
-const Twothirdcolumn = styled.div`
-  ${tw('md:w-2/3')};
-`;
-
-const ContactForm = () => (
-    <React.Fragment>
-
- <NetlifyForm
-    name="contact-form"
-    method="post"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-  >
-  {({ loading, error, success }) => (
-    <div>
-      {loading &&
-        <div>Loading...</div>
-      }
-      {error &&
-        <div>Your information was not sent. Please try again later.</div>
-      }
-      {success &&
-        <div>Thank you for contacting us!</div>
-      }
-      {!loading && !success &&
-        <div>
-             
-          <FormBlock>
-          <Input type="hidden" name="contact-form" value="contact-form" />
-      <Onethirdcolumn>
-        <Label>
-          Name:
-        </Label>
-      </Onethirdcolumn>
-      <Twothirdcolumn>
-          <Input type='text' name='Name' required />
-          </Twothirdcolumn>
-    </FormBlock>
-    <FormBlock>
-      <Onethirdcolumn>
-        <Label>
-          Email:
-        </Label>
-      </Onethirdcolumn>
-      <Twothirdcolumn>
-          <Input type='text' name='Email' required />
-          </Twothirdcolumn>
-    </FormBlock>
-    <FormBlock>
-      <Onethirdcolumn>
-        <Label>
-          Message:
-        </Label>
-      </Onethirdcolumn>
-      <Twothirdcolumn>
-          <Textarea name='Message' required />
-          </Twothirdcolumn>
-      
-      </FormBlock>
-      <FormBlock>
-        <Onethirdcolumn>
-        </Onethirdcolumn>
-        <Twothirdcolumn>
-          <Button type="submit">Submit</Button>
-          </Twothirdcolumn> 
-      </FormBlock>
-        </div>
-      }
+  render() {
+    return (
+      <div>
+        <h1>Contact</h1>
+        <form
+          name="contact"
+          method="post"
+          action="/thanks/"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={this.handleSubmit}
+        >
+          {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden>
+            <label>
+              Don’t fill this out:{" "}
+              <input name="bot-field" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your name:<br />
+              <input type="text" name="name" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your email:<br />
+              <input type="email" name="email" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <label>
+              Message:<br />
+              <textarea name="message" onChange={this.handleChange} />
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
       </div>
-  )}
-  </NetlifyForm>
-  </React.Fragment>
-  
-);
-
-export default ContactForm;
-
-ContactForm.propTypes = {
-};
+    );
+  }
+}

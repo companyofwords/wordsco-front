@@ -72,7 +72,7 @@ const ContactForm = () => (
         <div>
              
           <FormBlock>
-          <Input type="hidden" name="contact-form" value="contact" />
+          <Input type="hidden" name="contact-form" value="contact-form" />
       <Onethirdcolumn>
         <Label>
           Name:
